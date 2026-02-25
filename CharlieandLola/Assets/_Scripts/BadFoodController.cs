@@ -27,7 +27,7 @@ public class BadFoodController : MonoBehaviour
         {
             //Debug.Log("Collided with bad food");
             Destroy(gameObject);
-            //TODO: Decrease score
+            GameManager.Instance.addScore(-10);
         }
     }
 }
