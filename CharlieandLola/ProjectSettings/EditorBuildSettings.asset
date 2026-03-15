@@ -8,6 +8,27 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/LivingRoom.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/_Scenes/Greenland_Level.unity
+    guid: 50d8cb9902a4dd54181884770abcdbe4
+  - enabled: 1
+    path: Assets/_Scenes/Jupiter_Level.unity
+    guid: 4e02cbe67e6ead84da31fd00c00f6cb4
+  - enabled: 1
+    path: Assets/_Scenes/Kitchen.unity
+    guid: 70cd788ec72b6d0478d61ef3f2698028
+  - enabled: 1
+    path: Assets/_Scenes/MainMenu.unity
+    guid: 97400dee357460347b506c85bdef89e8
+  - enabled: 1
+    path: Assets/_Scenes/Fuji_Level.unity
+    guid: 89fe1270991121d49809ef440b48b89c
+  - enabled: 1
+    path: Assets/_Scenes/Moonmato.unity
+    guid: ae722f68a6e7c56488002cf1f8d04907
+  - enabled: 1
+    path: Assets/_Scenes/Sea_Level.unity
+    guid: dfea11d6ac4b53446887bcbec6f821f3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

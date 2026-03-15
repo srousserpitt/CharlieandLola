@@ -8,7 +8,7 @@ public class FoodSpawner : MonoBehaviour
     public GameObject cabbage;
     public GameObject bananna;
     public float dropSpeed;
-    //What to include? public list<GameObject> foodCollection;
+    private List<GameObject> foodCollection = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
