@@ -7,13 +7,13 @@ public class GoodFoodController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // nothing special to do here
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Delete if object hits floor
+        //Delete if the food gets far enough down
         if(gameObject.transform.position.y <= -20f)
         {
             Destroy(gameObject);

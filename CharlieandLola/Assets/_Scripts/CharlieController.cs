@@ -3,11 +3,11 @@ using UnityEngine;
 public class CharlieController : MonoBehaviour
 {
     //Making public variables allows you to adust it in unity
-    public float speed = 10.0f;
+    public float speed = 8.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // nothing required on start, update is what we care about
     }
 
     // Update is called once per frame

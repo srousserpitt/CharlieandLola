@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
 {
-
+    // food objects and drop rates
     public GameObject mushroom;
     public GameObject cabbage;
     public GameObject bananna;
@@ -17,7 +17,9 @@ public class FoodSpawner : MonoBehaviour
     public float beginSpawnRate = 4;
     public float spawnRate = 15;
     private float currentSpawnRate;
+    // tracker for time expired
     private float totalTime;
+    // list of all food objects
     private List<GameObject> foodCollection = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,12 +34,14 @@ public class FoodSpawner : MonoBehaviour
         }
     }
 
+    // creates a new food item of a random type in a random location
     void SpawnFood()
     {
         GameObject newFood = Instantiate(GetRandomType(), GetDropPosition(), Quaternion.identity);
         foodCollection.Add(newFood);
     }
 
+    // generates a random food drop position, ranges hard coded
     Vector2 GetDropPosition()
     {
         float x = Random.Range(-8f, 8f);
@@ -45,6 +49,7 @@ public class FoodSpawner : MonoBehaviour
         return new Vector2(x, y);
     }
 
+    // generates a random food type based on the bad food ratio
     GameObject GetRandomType()
     {
         float type = Random.Range(0f, 100f);
@@ -80,17 +85,18 @@ public class FoodSpawner : MonoBehaviour
                     food.transform.Translate(Vector2.down * Time.deltaTime * currentDropSpeed);
                 }
             }
-            // Spawn new food
+            // Spawn new food. Remember, there are lots of frames so spawn rate doesn't need to be super high
             if(Random.Range(0f,100f) < currentSpawnRate)
             {
                 SpawnFood();
             }
             GameManager.Instance.timer -= Time.deltaTime;
-            // Update rates
+            // Update rates based on percent of tme elapsed
             currentDropSpeed = (dropSpeed - beginSpeed) * (totalTime - GameManager.Instance.timer) / totalTime + beginSpeed;
             currentSpawnRate = (spawnRate - beginSpawnRate) * (totalTime - GameManager.Instance.timer) / totalTime + beginSpawnRate;
         } else
         {
+            // once the timer is out, call the level end from GameManager
             GameManager.Instance.endLevel();
         }
     }

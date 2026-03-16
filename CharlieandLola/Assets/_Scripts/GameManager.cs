@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     public string seaSceneName = "Sea_Level";
     public string endingSceneName = "Moonmato";
 
-
+    //Generate or access the singleton
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -77,12 +77,12 @@ public class GameManager : MonoBehaviour
 
     public void endLevel()
     {
-        //
+        // Make sure there's no food spawner running after the level ends
         if (foodSpawner != null)
         {
             foodSpawner.SetActive(false);
         }
-        //update high scores
+        //update high score for the level that was played, must be positive since default values are zero
         switch (level)
         {
             case 1:
@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // THIS IS NOT THE LEVEL SCORE! This is specifically for the high score display in the kitchen
     public void updateScoreText()
     {
         if (scoreText != null)
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //Return the number of levels completed (score of 0 does not count)
+    //Return the number of levels completed (score of 0 does not count, though most ratios would make that almost impossible)
     public int levelsComplete()
     {
         int complete = 0;

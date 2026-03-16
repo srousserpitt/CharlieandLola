@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class CheckTutorial : MonoBehaviour
 {
+    // the living room tutorial canvas
     public GameObject tutorialCanvas;
 
+    //Makes sure the game manager exists and sets the canvas status
     private void Awake()
     {
         if (GameManager.Instance != null)
@@ -19,6 +21,8 @@ public class CheckTutorial : MonoBehaviour
             }
         }
     }
+
+    // Flags the tutorial and closes the canvas
     public void finishTutorial()
     {
         GameManager.Instance.tutorialDone = true;

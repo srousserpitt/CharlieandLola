@@ -3,6 +3,7 @@ using TMPro;
 
 public class UpdateUI : MonoBehaviour
 {
+    // Creates and updates displays for level score and timer
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timerText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
