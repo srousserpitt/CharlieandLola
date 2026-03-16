@@ -26,7 +26,7 @@ public class LolaInteract : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (moonButton != null && GameManager.Instance.levelsComplete() == 4)
+            if (moonButton != null && GameManager.Instance.moonUnlocked == true)
             {
                 moonButton.SetActive(true);
             }

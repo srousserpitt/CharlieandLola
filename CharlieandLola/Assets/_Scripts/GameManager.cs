@@ -10,11 +10,12 @@ public class GameManager : MonoBehaviour
     //Singleton design
     public static GameManager Instance { get; private set; }
 
-    //Managed variables forrunning the game
+    //Managed variables for running the game
     [Header("Game State")]
-    public int timer;
+    public float timer;
     public int score;
     public int level;
+    public bool loading;
     //High scores and ending unlock
     private int levelOneScore = 0;
     private int levelTwoScore = 0;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     private int levelFourScore = 0;
     public TextMeshProUGUI scoreText;
     public bool moonUnlocked = false;
+    private GameObject UICanvas;
+    public GameObject foodSpawner;
     //Scene names
     public string livingRoomSceneName = "LivingRoom";
     public string kitchenSceneName = "Kitchen";
@@ -47,38 +50,32 @@ public class GameManager : MonoBehaviour
         updateScoreText();
     }
 
-    public void startLevel(int level)
+    public void startLevel(int levelNo, GameObject currentCanvas)
     {
+        level = levelNo;
+        UICanvas = currentCanvas;
         score = 0;
         timer = 60;
-        switch(level)
+        // Turn on UI, begin foodspawner logic
+        UICanvas.SetActive(true);
+        if (foodSpawner != null)
         {
-            case 1:
-                SceneManager.LoadScene(fujiSceneName);
-                break;
-            case 2:
-                SceneManager.LoadScene(greenlandSceneName);
-                break;
-            case 3:
-                SceneManager.LoadScene(jupiterSceneName);
-                break;
-            case 4:
-                SceneManager.LoadScene(seaSceneName);
-                break;
+            foodSpawner.AddComponent<FoodSpawner>();
+        } else
+        {
+            Debug.Log("Forgot to add spawner, no level for you");
         }
     }
 
     public void addScore(int Amount)
     {
         score += Amount;
-        Debug.Log($"Score: {score}");
-        //Update UI
     }
 
-    public void endLevel(int Level)
+    public void endLevel()
     {
         //update high scores
-        switch (Level)
+        switch (level)
         {
             case 1:
                 if (score > levelOneScore)
