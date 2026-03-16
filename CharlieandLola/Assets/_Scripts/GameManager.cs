@@ -124,13 +124,17 @@ public class GameManager : MonoBehaviour
 
     private void updateScoreText()
     {
-        scoreText.text = "Level 1: " + levelOneScore + System.Environment.NewLine
-            + "Level 2: " + levelTwoScore + System.Environment.NewLine
-            + "Level 3: " + levelThreeScore + System.Environment.NewLine
-            + "Level 4: " + levelFourScore;
+        if (scoreText != null)
+        {
+            scoreText.text = "Level 1: " + levelOneScore + System.Environment.NewLine
+                + "Level 2: " + levelTwoScore + System.Environment.NewLine
+                + "Level 3: " + levelThreeScore + System.Environment.NewLine
+                + "Level 4: " + levelFourScore;
+        }
     }
 
-    private int levelsComplete()
+    //Return the number of levels completed (score of 0 does not count)
+    public int levelsComplete()
     {
         int complete = 0;
         if (levelOneScore != 0)
@@ -152,6 +156,7 @@ public class GameManager : MonoBehaviour
         return complete;
     }
 
+    // Return Lola's dialogue, based on levels completed
     public string lolaDialogue()
     {
         switch (levelsComplete())
