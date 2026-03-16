@@ -27,7 +27,7 @@ public class GoodFoodController : MonoBehaviour
         {
             //Debug.Log("Collided with good food");
             Destroy(gameObject);
-            //TODO: Increment score
+            GameManager.Instance.addScore(10);
         }
     }
 }

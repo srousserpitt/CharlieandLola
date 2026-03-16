@@ -4,12 +4,13 @@ public class StartLevel : MonoBehaviour
 {
     public GameObject infoCanvas;
     public GameObject levelUICanvas;
+    public GameObject levelSpawner;
     public int levelNumber;
     
     public void onReady()
     {
         infoCanvas.SetActive(false);
-        GameManager.Instance.startLevel(levelNumber, levelUICanvas);
+        GameManager.Instance.startLevel(levelNumber, levelUICanvas, levelSpawner);
     }
 
 

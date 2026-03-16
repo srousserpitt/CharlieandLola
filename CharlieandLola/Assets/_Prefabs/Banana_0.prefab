@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6812271101754051576}
   - component: {fileID: 207773752830594009}
   - component: {fileID: 1547326254991185435}
+  - component: {fileID: 3225324818085777799}
   m_Layer: 0
   m_Name: Banana_0
   m_TagString: Untagged
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 7622018903725201378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3151, y: 2.6207972, z: 0}
-  m_LocalScale: {x: 0.10800001, y: 0.0871, z: 1}
+  m_LocalPosition: {x: -5.8894, y: 2.2225, z: 0}
+  m_LocalScale: {x: 0.07009201, y: 0.05726825, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,3 +105,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f62a851a6c7b2de4b9e7f1c0a62e78a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BadFoodController
+--- !u!70 &3225324818085777799
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7622018903725201378}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.000110324516}
+  m_Size: {x: 30.300005, y: 37.08491}
+  m_Direction: 0

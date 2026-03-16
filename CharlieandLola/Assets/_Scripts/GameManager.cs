@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public float timer;
     public int score;
     public int level;
-    public bool loading;
+    public bool tutorialDone = false;
     //High scores and ending unlock
     private int levelOneScore = 0;
     private int levelTwoScore = 0;
@@ -50,17 +50,18 @@ public class GameManager : MonoBehaviour
         updateScoreText();
     }
 
-    public void startLevel(int levelNo, GameObject currentCanvas)
+    public void startLevel(int levelNo, GameObject currentCanvas, GameObject currentSpawner)
     {
         level = levelNo;
         UICanvas = currentCanvas;
+        foodSpawner = currentSpawner;
         score = 0;
-        timer = 60;
+        timer = 6;
         // Turn on UI, begin foodspawner logic
         UICanvas.SetActive(true);
         if (foodSpawner != null)
         {
-            foodSpawner.AddComponent<FoodSpawner>();
+            foodSpawner.SetActive(true);
         } else
         {
             Debug.Log("Forgot to add spawner, no level for you");
@@ -74,6 +75,11 @@ public class GameManager : MonoBehaviour
 
     public void endLevel()
     {
+        //
+        if (foodSpawner != null)
+        {
+            foodSpawner.SetActive(false);
+        }
         //update high scores
         switch (level)
         {
@@ -119,7 +125,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void updateScoreText()
+    public void updateScoreText()
     {
         if (scoreText != null)
         {

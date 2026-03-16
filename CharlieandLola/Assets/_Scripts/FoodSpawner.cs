@@ -8,13 +8,16 @@ public class FoodSpawner : MonoBehaviour
     public GameObject cabbage;
     public GameObject bananna;
     public GameObject goodFood;
-    public float dropSpeed;
+    public float dropSpeed = 3;
     //Total percent of 'bad' foods
-    public float badRatio;
+    public float badRatio = 20;
+    //Chance a new food will spawn this frame
+    public float spawnRate = 10;
     private List<GameObject> foodCollection = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Debug.Log("Spawning");
         for (int i = 0; i < Random.Range(2, 7); i++)
         {
             SpawnFood();
@@ -36,7 +39,7 @@ public class FoodSpawner : MonoBehaviour
 
     GameObject GetRandomType()
     {
-        float type = Random.Range(0f, badRatio);
+        float type = Random.Range(0f, 100f);
         if (type < badRatio / 3)
         {
             return mushroom;
@@ -68,6 +71,10 @@ public class FoodSpawner : MonoBehaviour
                     //Food falls according to dropspeed, update to change
                     food.transform.Translate(Vector2.down * Time.deltaTime * dropSpeed);
                 }
+            }
+            if(Random.Range(0f,100f) < spawnRate)
+            {
+                SpawnFood();
             }
             GameManager.Instance.timer -= Time.deltaTime;
         } else
