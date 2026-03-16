@@ -8,15 +8,23 @@ public class FoodSpawner : MonoBehaviour
     public GameObject cabbage;
     public GameObject bananna;
     public GameObject goodFood;
-    public float dropSpeed = 3;
+    public float beginSpeed = 2.5f;
+    public float dropSpeed = 4.0f;
+    private float currentDropSpeed;
     //Total percent of 'bad' foods
     public float badRatio = 20;
     //Chance a new food will spawn this frame
-    public float spawnRate = 10;
+    public float beginSpawnRate = 4;
+    public float spawnRate = 15;
+    private float currentSpawnRate;
+    private float totalTime;
     private List<GameObject> foodCollection = new List<GameObject>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        currentSpawnRate = beginSpawnRate;
+        currentDropSpeed = beginSpeed;
+        totalTime = GameManager.Instance.timer;
         Debug.Log("Spawning");
         for (int i = 0; i < Random.Range(2, 7); i++)
         {
@@ -68,15 +76,19 @@ public class FoodSpawner : MonoBehaviour
             {
                 if (food != null)
                 {
-                    //Food falls according to dropspeed, update to change
-                    food.transform.Translate(Vector2.down * Time.deltaTime * dropSpeed);
+                    //Food falls according to current drop speed
+                    food.transform.Translate(Vector2.down * Time.deltaTime * currentDropSpeed);
                 }
             }
-            if(Random.Range(0f,100f) < spawnRate)
+            // Spawn new food
+            if(Random.Range(0f,100f) < currentSpawnRate)
             {
                 SpawnFood();
             }
             GameManager.Instance.timer -= Time.deltaTime;
+            // Update rates
+            currentDropSpeed = (dropSpeed - beginSpeed) * (totalTime - GameManager.Instance.timer) / totalTime + beginSpeed;
+            currentSpawnRate = (spawnRate - beginSpawnRate) * (totalTime - GameManager.Instance.timer) / totalTime + beginSpawnRate;
         } else
         {
             GameManager.Instance.endLevel();

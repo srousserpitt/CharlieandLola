@@ -52,11 +52,13 @@ public class GameManager : MonoBehaviour
 
     public void startLevel(int levelNo, GameObject currentCanvas, GameObject currentSpawner)
     {
+        // Import relevant gameobjects and level designator
         level = levelNo;
         UICanvas = currentCanvas;
         foodSpawner = currentSpawner;
+        // Currently hard-coded here to make sure it gets set at the beginning of each level, not best practice
         score = 0;
-        timer = 6;
+        timer = 60;
         // Turn on UI, begin foodspawner logic
         UICanvas.SetActive(true);
         if (foodSpawner != null)
