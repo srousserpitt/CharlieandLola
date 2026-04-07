@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1925379327790444943, guid: 7c4f085fdedd17c428c50eb98b721843, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -332,6 +332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartLevel
   infoCanvas: {fileID: 0}
   levelUICanvas: {fileID: 0}
+  levelSpawner: {fileID: 0}
   levelNumber: 0
 --- !u!1 &798022729453588236
 GameObject:

@@ -686,7 +686,7 @@ PrefabInstance:
     - target: {fileID: 8473125549565141220, guid: d1ac7f43346b8914b9b1c10291951bed, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 2491380146965073139, guid: 2c673a2fd9191ac4dbb28eda87681a4f, type: 3}
+      objectReference: {fileID: 3439576247533404006, guid: 3e12885bd5ba66f4da5ab4ecf85ac90d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -795,7 +795,7 @@ MonoBehaviour:
   timer: 0
   score: 0
   level: 0
-  loading: 0
+  tutorialDone: 0
   scoreText: {fileID: 0}
   moonUnlocked: 0
   foodSpawner: {fileID: 0}
@@ -1029,7 +1029,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2491380146965073139, guid: 2c673a2fd9191ac4dbb28eda87681a4f, type: 3}
+  m_Sprite: {fileID: 3439576247533404006, guid: 3e12885bd5ba66f4da5ab4ecf85ac90d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -710,7 +710,7 @@ MonoBehaviour:
   timer: 0
   score: 0
   level: 0
-  loading: 0
+  tutorialDone: 0
   scoreText: {fileID: 953874281}
   moonUnlocked: 0
   foodSpawner: {fileID: 0}
@@ -1197,7 +1197,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8288818127021787136, guid: d0d8c745c242dd548a7bfe1c139dad7d, type: 3}
+  m_Sprite: {fileID: 2187546613129653484, guid: 200873f0b64223e4d8153cd9c842684f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1367,7 +1367,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4296214781231989871, guid: d0d8c745c242dd548a7bfe1c139dad7d, type: 3}
+  m_Sprite: {fileID: -288798536256549698, guid: b76e7967c59a8d8469304407752f91d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2082,7 +2082,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8841490917199087839, guid: 33c77e4703d1d63469c7c3dbd13fdf7f, type: 3}
+  m_Sprite: {fileID: -8841490917199087839, guid: 724e245d8ef5e694b81754c65a106a83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -176,7 +176,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.12, y: 4.29}
+    oldSize: {x: 4.06, y: 2.18}
     newSize: {x: 6.12, y: 4.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -233,7 +233,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5720276103968338487, guid: 3d403fcc46a97bb49ae550c65991654e, type: 3}
+  m_Sprite: {fileID: -1925379327790444943, guid: 7c4f085fdedd17c428c50eb98b721843, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 16665006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.52, y: -1.16, z: 0}
+  m_LocalPosition: {x: -13.99, y: -1.113, z: 0}
   m_LocalScale: {x: 0.2628729, y: 0.2758014, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -307,7 +307,7 @@ MonoBehaviour:
   timer: 0
   score: 0
   level: 0
-  loading: 0
+  tutorialDone: 0
   scoreText: {fileID: 0}
   moonUnlocked: 0
   foodSpawner: {fileID: 1902625397}
@@ -890,7 +890,7 @@ PrefabInstance:
     - target: {fileID: 8473125549565141220, guid: d1ac7f43346b8914b9b1c10291951bed, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5720276103968338487, guid: 3d403fcc46a97bb49ae550c65991654e, type: 3}
+      objectReference: {fileID: -1925379327790444943, guid: 7c4f085fdedd17c428c50eb98b721843, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
